@@ -1,8 +1,6 @@
+// INITIAL BOARD OF GAME WITH 16 X 16 DIMENSIONS
 let container = document.getElementById("grid");
 let userInput = 16;
-
-// INITIAL BOARD OF GAME WITH 16 X 16 DIMENSIONS
-
 let parsedInput = parseInt(userInput) * parseInt(userInput);
 
 for (i = 1; i <= parsedInput; i++) {
@@ -10,10 +8,10 @@ for (i = 1; i <= parsedInput; i++) {
   cell.classList.add("cellStyle");
   container.appendChild(cell);
 }
-function makeRows(rows, columns) {
+const makeRows = (rows, columns) => {
   grid.style.setProperty("--grid-rows", rows);
   grid.style.setProperty("--grid-columns", columns);
-}
+};
 makeRows(userInput, userInput);
 
 // FUNCTION TO CHANGE COLOR WITH MOUSEOVER
@@ -27,7 +25,7 @@ for (let i = 0; i < divs.length; i++) {
 }
 // RESET THE GRID FOR PLAY IN A NEW SET OF DIMENSIONS
 
-function promptUser() {
+const promptUser = () => {
   let userInputUpdated = prompt(
     "Huh-huh-huh hey kids!!! Pick a value from 2 to 100...and don't be stingy!"
   );
@@ -52,4 +50,4 @@ function promptUser() {
       divsUpdated[i].style["background-color"] = "#EA6032";
     });
   }
-}
+};
